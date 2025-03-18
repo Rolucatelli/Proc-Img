@@ -13,7 +13,7 @@
 #include "../utils/imagelib.h"
 #endif
 
-image neg(image img)
+image eq(image img)
 {
 
     int w = img->nc;
@@ -49,7 +49,7 @@ image neg(image img)
 
 void msg(char *s)
 {
-    printf("\nNegative image");
+    printf("\nEqualizacao de histograma");
     printf("\n-------------------------------");
     printf("\nUsage:  %s  image-name[.pgm]\n\n", s);
     printf("    image-name[.pgm] is image file in pgm format \n\n");
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     //-- read image
     In = img_get(nameIn, GRAY);
     //-- transformation
-    Out = neg(In);
+    Out = eq(In);
     //-- save image
     img_put(Out, nameOut, GRAY);
 
@@ -82,6 +82,6 @@ int main(int argc, char *argv[])
     puts(cmd);
     system(cmd);
     img_free(In);
-    img_free(Out);
+    // img_free(Out);
     return 0;
 }
