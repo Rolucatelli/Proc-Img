@@ -14,6 +14,9 @@ endif
 
 all: $(TARGET)
 
+run: $(TARGET);\
+    ./$(TARGET) img
+
 $(TARGET): $(OBJECTS);\
     $(CC) -g -o $@ $(LIB) $^ $(LDFLAGS) 
 
