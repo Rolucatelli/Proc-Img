@@ -1,10 +1,11 @@
 {
-    "files.associations": {
-        "math.h": "c",
-        "complex.h": "c",
-        "imagelib.h": "c",
-        "random": "c",
-        "limits": "c",
-        "algorithm": "c"
-    }
+  "files.associations": {
+    "math.h": "c",
+    "complex.h": "c",
+    "imagelib.h": "c",
+    "random": "c",
+    "limits": "c",
+    "algorithm": "c",
+    "stdlib.h": "c"
+  }
 }
