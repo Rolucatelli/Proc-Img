@@ -6,6 +6,7 @@
     "random": "c",
     "limits": "c",
     "algorithm": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "cstdint": "c"
   }
 }
