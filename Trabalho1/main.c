@@ -57,39 +57,6 @@ int pqinsert(nodetype *node, int *rootnodes, int i)
 }
 
 /*--------------------------------------------------------------
- * Mostra a estrutura de nos (Arvore + lista ordenada)
- *--------------------------------------------------------------*/
-void shownodes(nodetype *node, int root, int n)
-{
-    int i;
-    printf("\n\nRoot=%2d", root);
-    for (i = 0; i < 2 * n - 1; i++)
-        printf("%5d", i);
-    printf("\n       ");
-    for (i = 0; i < 2 * n - 1; i++)
-        printf("-----");
-    printf("\n%7s", "freq");
-    for (i = 0; i < 2 * n - 1; i++)
-        printf("%5d", node[i].freq);
-    printf("\n%7s", "father");
-    for (i = 0; i < 2 * n - 1; i++)
-        printf("%5d", node[i].father);
-    printf("\n%7s", "left");
-    for (i = 0; i < 2 * n - 1; i++)
-        printf("%5d", node[i].left);
-    printf("\n%7s", "right");
-    for (i = 0; i < 2 * n - 1; i++)
-        printf("%5d", node[i].right);
-    printf("\n\nLista = ");
-    while (root != -1)
-    {
-        printf("%d:[%d|%d]=> ", root, node[root].freq, node[root].father);
-        root = node[root].father;
-    }
-    printf("\n");
-}
-
-/*--------------------------------------------------------------
  * buildTree
  * Funcao que constroi a arvore de huffman
  * Parametros:
