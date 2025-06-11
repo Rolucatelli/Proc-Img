@@ -106,7 +106,7 @@ image read_pgh(char *name)
     pgh imgIn = malloc(sizeof(pgh));
     FILE *fimg;
     ERROR((fimg = fopen(name, "rb")) == NULL, errormsg("File open error: <%s>", name));
-    /*--- PNM = "P1" or "P2" or "P3" ---*/
+
     fgets(lines, 80, fimg);
     ERROR((lines[0] != 'P' || (lines[1] != 'H')), errormsg("File type image error: <%s>", name));
     /*--- Comment lines ---*/
@@ -126,12 +126,6 @@ image read_pgh(char *name)
     int *histograma = malloc((1 + ml) * sizeof(int));
 
     fread(histograma, sizeof(int), ml + 1, fimg);
-
-    // printf("Histograma:\n");
-    // for (int i = 0; i <= ml; i++)
-    // {
-    //     printf("  Tom %d: %d\n", i, histograma[i]);
-    // }
     imgIn->hg = histograma;
 
     int newsize = (2 * (ml + 1)) - 1;

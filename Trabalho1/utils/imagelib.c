@@ -15,7 +15,6 @@
  *-------------------------------------------------------------------------*/
 image img_create(int nr, int nc, int ml, int tp)
 {
-    puts("ok1");
     image img = malloc(sizeof(image *));
     img->px = malloc(nr * nc * sizeof(int));
     img->nr = nr;
